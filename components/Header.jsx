@@ -5,32 +5,27 @@ import IconButton from '@mui/material/IconButton';
 import HeadsetMicOutlinedIcon from '@mui/icons-material/HeadsetMicOutlined';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import Avatar from '@mui/material/Avatar';
-import Stack from '@mui/material/Stack';
 import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
 
 export default function Header(){
     return(
-        <header className="w-full h-14 md:w-auto flex items-center justify-between">
+        <header className="w-full h-20 px-6 flex items-center justify-between shadow">
             <Logo/>
             <SearchInput />
-            <div className="w-96 h-14 flex items-center gap-3">
-                <IconButton aria-label="Headtset" size="large">
+            <div className="w-72 h-12 flex items-center gap-3">
+                <IconButton className="border-2 border-solid border-gray-200" aria-label="Headtset" size="large">
                     <HeadsetMicOutlinedIcon fontSize="small" />
                 </IconButton>
 
-                <IconButton aria-label="Notifications" size="small">
+                <IconButton className="border-2 border-solid border-gray-200" aria-label="Notifications" size="small">
                     <NotificationsNoneIcon fontSize="small" />
                 </IconButton>                
 
                 <IconButton className="flex gap-3" aria-label="avatar" size="small">
-                    Cindy.Baker
-                    <Stack direction="row" spacing={2}>
-                        <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
-                    </Stack>y
+                    <span className="text-xl font-bold">Cindy.Baker</span>
+                    <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
                     <KeyboardArrowDownOutlinedIcon fontSize="small" />
                 </IconButton>
-
-
             </div>
         </header>
     )
