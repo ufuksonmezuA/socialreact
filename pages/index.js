@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import LeftSidebar from "@/components/LeftSidebar";
-import ContentArea from "@/components/contentArea";
+import ContentArea from "@/components/ContentArea";
 import RightSidebar from "@/components/RightSidebar";
 
 

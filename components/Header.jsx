@@ -1,32 +1,61 @@
-import Logo from "@/components/logo"
-import SearchInput from "@/components/search_input"
+import Logo from "@/public/logo.png";
+import Image from "next/image";
+import TextField from "@mui/material/TextField";
+import HeadsetMicIcon from "@mui/icons-material/HeadsetMic";
+import NotificationsIcon from "@mui/icons-material/Notifications";
+import Avatar from "@mui/material/Avatar";
+import { deepPurple } from "@mui/material/colors";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import SearchIcon from "@mui/icons-material/Search";
+import InputAdornment from "@mui/material/InputAdornment";
 
-import IconButton from '@mui/material/IconButton';
-import HeadsetMicOutlinedIcon from '@mui/icons-material/HeadsetMicOutlined';
-import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
-import Avatar from '@mui/material/Avatar';
-import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
+export default function Header() {
+  return (
+    <header className="flex justify-between px-7 py-6 border-b-2 border-gray-200">
+      <Image src={Logo} height={55} />
 
-export default function Header(){
-    return(
-        <header className="w-full h-20 px-6 flex items-center justify-between shadow">
-            <Logo/>
-            <SearchInput />
-            <div className="w-72 h-12 flex items-center gap-3">
-                <IconButton className="border-2 border-solid border-gray-200" aria-label="Headtset" size="large">
-                    <HeadsetMicOutlinedIcon fontSize="small" />
-                </IconButton>
+      <TextField
+        id="outlined-basic"
+        placeholder="Search now..."
+        sx={{
+          width: "750px",
+          borderRadius: "500px",
+        }}
+        InputProps={{
+          style: {
+            borderRadius: "1000px",
+          },
+          startAdornment: (
+            <InputAdornment position="start">
+              <SearchIcon />
+            </InputAdornment>
+          ),
+        }}
+      />
 
-                <IconButton className="border-2 border-solid border-gray-200" aria-label="Notifications" size="small">
-                    <NotificationsNoneIcon fontSize="small" />
-                </IconButton>                
-
-                <IconButton className="flex gap-3" aria-label="avatar" size="small">
-                    <span className="text-xl font-bold">Cindy.Baker</span>
-                    <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
-                    <KeyboardArrowDownOutlinedIcon fontSize="small" />
-                </IconButton>
-            </div>
-        </header>
-    )
+      <div className="flex items-center gap-3">
+        <HeadsetMicIcon
+          sx={{
+            fontSize: 42,
+            color: "#374151",
+            border: "1px solid #e5e7eb",
+            padding: "5px",
+            borderRadius: "50%",
+          }}
+        />
+        <NotificationsIcon
+          sx={{
+            fontSize: 42,
+            color: "#374151",
+            border: "1px solid #e5e7eb",
+            padding: "5px",
+            borderRadius: "50%",
+          }}
+        />
+        <span className="text-xl font-bold ml-7">Vinc.ragga</span>
+        <Avatar sx={{ bgcolor: deepPurple[500] }}>VR</Avatar>
+        <ExpandMoreIcon sx={{ fontSize: 28 }} />
+      </div>
+    </header>
+  );
 }
