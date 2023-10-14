@@ -8,16 +8,16 @@ export default function Home() {
   return (
     <> 
       <Header/>
-      <main className="flex p-12 gap-20">
-        <div className="w-1/4">
+      <main className="flex p-12 gap-10">
+        <div className="w-2/12">
           <LeftSidebar/>
         </div>
 
-        <div className="w-2/4">
+        <div className="w-8/12">
           <ContentArea/>
         </div>
 
-        <div className="w-1/4">
+        <div className="w-3/12">
           <RightSidebar/>
         </div>
       </main>

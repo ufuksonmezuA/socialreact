@@ -1,5 +1,5 @@
-import Messages from "./leftSidebarCompanents/Messages";
-import NavMenu from "./leftSidebarCompanents/NavMenu";
+import Messages from "./LeftSidebarCompanents/Messages";
+import NavMenu from "./LeftSidebarCompanents/NavMenu";
 import Divider from '@mui/material/Divider';
 
 export default function LeftSidebar () {
