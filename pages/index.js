@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <> 
       <Header/>
-      <main className="flex p-12 gap-10">
+      <main className="h-full flex gap-10">
         <div className="w-2/12">
           <LeftSidebar/>
         </div>

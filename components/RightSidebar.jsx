@@ -1,9 +1,10 @@
-import CardDesign from "./RightSİdebarCompanents/CardDesign"
-import PopularProfileCard from "./RightSİdebarCompanents/PopularProfileCard"
+import CardDesign from "./RightSidebarCompanents/CardDesign"
+import PopularProfileCard from "./RightSidebarCompanents/PopularProfileCard"
+import TrendingPostCard from "./RightSidebarCompanents/TrendingPostCard"
 
 export default function RightSidebar () {
     return(
-        <>
+        <div className="p-6">
             <div className="flex flex-col gap-10"> 
                 <CardDesign
                     cardTitle={"Popular Profiles"}
@@ -12,9 +13,9 @@ export default function RightSidebar () {
 
                 <CardDesign 
                     cardTitle="Trending Post"
-                    cardComponent="Deneme"
+                    cardComponent= {<TrendingPostCard/>}
                 />
             </div>
-        </>    
+        </div>    
     )
 }

@@ -6,53 +6,64 @@ export default function Messages() {
 
     const messages = [
         {
-            senderFullName: "Ali Veli",
-            avatar: "A",
-            messages: "Lorem ipsum dolor sit.",
+            senderFullName: "Michaela Rinch",
+            avatar: "M",
+            messages: "Please help me...",
+            count: 1
         },
         {
-            senderFullName: "Ali Veli",
+            senderFullName: "Alexandra A",
             avatar: "A",
-            messages: "Lorem ipsum dolor sit.",
+            messages: "How are you...",
+            count: 1
         },
         {
-            senderFullName: "Ali Veli",
-            avatar: "A",
-            messages: "Lorem ipsum dolor sit.",
+            senderFullName: "King_steve",
+            avatar: "K",
+            messages: "Thanks brade",
         },
         {
-            senderFullName: "Ali Veli",
+            senderFullName: "Margareth_L",
+            avatar: "M",
+            messages: "Okey, thank you",
+        },
+        {
+            senderFullName: "Alex Gonzaga",
             avatar: "A",
-            messages: "Lorem ipsum dolor sit.",
+            messages: "Okeyy, all right",
+        },
+        {
+            senderFullName: "Melisa Silv",
+            avatar: "M",
+            messages: "Woww, okey",
         },
     ]
 
     return (
-        <>
-            <div>
-                <div className="flex justify-between">
-                    <span className="font-bold text-xl">Messages</span>
-                    <span className="text-red-600 font-bold"> see all</span>
-                </div>
-                {messages.map((messages) => {
-                    return(                <div className="flex justify-between mt-10">
- 
+    <div className="py-4">
+        <div className="flex justify-between border-t-2">
+            <span className="font-bold text-xl pt-5">Messages</span>
+            <span className="text-red-600 font-bold pt-5"> see all</span>
+        </div>
+        {messages.map((messages) => {
+            return(
+                <div className="flex justify-between mt-3">
                     <div className="flex items-cnter gap-3">
-                    <div>
-                        <Avatar sx={{ bgcolor: deepOrange[500] }}>{messages.avatar}</Avatar>
+                        <div>
+                            <Avatar sx={{ bgcolor: deepOrange[500] }}>{messages.avatar}</Avatar>
+                        </div>
+                        <div>
+                            <span className="font-bold">{messages.senderFullName}</span>
+                            <p>{messages.messages}</p>
+                        </div>
                     </div>
+
                     <div className="">
-                        <span className="font-bold">{messages.senderFullName}</span>
-                        <p>{messages.messages}</p>
+                        {messages.count && <Chip label={messages.count} color="error" />}
                     </div>
                 </div>
-                <div className="">
-                    <Chip label="1" color="error" />     
-                    
-                </div>
-        </div>);
-                })}
-            </div>
-        </>
-    )
+            );
+        })}
+    </div>
+    );
 }
