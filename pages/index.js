@@ -13,7 +13,7 @@ export default function Home() {
           <LeftSidebar/>
         </div>
 
-        <div className="w-8/12">
+        <div className="w-7/12">
           <ContentArea/>
         </div>
 
