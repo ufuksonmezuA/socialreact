@@ -45,7 +45,7 @@ export default function ContentArea () {
                     avatar={content.avatar}
                     likeCount={content.likeCount}
                     commentCount={content.commentCount}
-                />
+                    />
                 )
             })}
         </div>    

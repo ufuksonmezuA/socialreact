@@ -32,27 +32,28 @@ export default function TrendingPostCard(){
         <div>
             {trendingPostData.map((post) =>{
                 return(
-                    <div className="flex flex-col mt-2">
-                        <div className="flex justify-between">
-                            <div className="text-lg text-black dark:text-white font-semibold w-60">
+                    <div className="flex justify-between mt-2">
+                        <div className="flex flex-col gap-2">
+                            <div className="text-lg text-[#040000] font-semibold w-60">
                                 {post.message}
                             </div>
-                            <div className="">
+                            <div className="flex gap-2 text-xs text-[#8F8F8F]">
+                                <span>{post.username}</span>
+                                <span>•</span>
+                                <span>{post.commentCount} Comment</span>
+                            </div>
+                        </div>
+                        <div className="">
                                 <CardMedia
                                     component="img"
                                     sx={{ 
                                         width: 100,
                                         height: 70,
-                                     }}
+                                        borderRadius: ".75rem",
+                                    }}
                                     image={post.image}
                                 />
                             </div>
-                        </div>
-                        <div className="flex gap-2 text-xs text-gray-400">
-                            <span>{post.username}</span>
-                            <span>•</span>
-                            <span>{post.commentCount} Comment</span>
-                        </div>
                     </div>
                 );
             })}

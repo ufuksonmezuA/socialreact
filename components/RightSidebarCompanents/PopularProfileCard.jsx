@@ -37,15 +37,15 @@ export default function PopularProfileCard (){
                             <div className="flex items-censter gap-3">
                                 <Avatar alt="" src={user.avatar} />
                                 <div>
-                                    <span className="text-lg text-black dark:text-white font-semibold">{user.fullname}</span>
-                                    <div className="flex gap-1 text-gray-400">
+                                    <span className="text-lg text-[#040000] font-semibold">{user.fullname}</span>
+                                    <div className="flex gap-1 text-[#8f8f8f]">
                                         <span>{user.followerCount} Followers</span>
                                     </div>
                                 </div>   
                             </div>
                             
                             <div>
-                                <button className="bg-rose-500 text-white rounded-full px-3 py-1">
+                                <button className="bg-[#EF3562] text-white rounded-full px-3 py-1">
                                     Follow
                                 </button>
                             </div>

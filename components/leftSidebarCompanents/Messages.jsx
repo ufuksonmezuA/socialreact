@@ -41,9 +41,9 @@ export default function Messages() {
 
     return (
     <div className="py-4">
-        <div className="flex justify-between border-t-2">
-            <span className="font-bold text-xl pt-5">Messages</span>
-            <span className="text-red-600 font-bold pt-5"> see all</span>
+        <div className="flex justify-between border-t-2 border-[#EDEDED]">
+            <span className="font-bold text-[#040000] text-xl pt-5">Messages</span>
+            <span className="text-[#EF3562] font-bold pt-5">See All</span>
         </div>
         {messages.map((messages) => {
             return(
@@ -53,13 +53,13 @@ export default function Messages() {
                             <Avatar sx={{ bgcolor: deepOrange[500] }}>{messages.avatar}</Avatar>
                         </div>
                         <div>
-                            <span className="font-bold">{messages.senderFullName}</span>
-                            <p>{messages.messages}</p>
+                            <span className="font-bold text-[#040000]">{messages.senderFullName}</span>
+                            <p className="text-[#8f8f8f]">{messages.messages}</p>
                         </div>
                     </div>
 
                     <div className="">
-                        {messages.count && <Chip label={messages.count} color="error" />}
+                        {messages.count && <Chip label={messages.count} className="bg-[#EF3562] text-white" />}
                     </div>
                 </div>
             );

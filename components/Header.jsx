@@ -11,15 +11,15 @@ import InputAdornment from "@mui/material/InputAdornment";
 
 export default function Header() {
   return (
-    <header className="flex justify-between px-7 py-6 border-b-2 border-gray-200">
+    <header className="flex justify-between px-7 py-6 border-b-2 border-[#EDEDED]">
       <Image src={Logo} height={55} />
 
       <TextField
         id="outlined-basic"
         placeholder="Search now..."
-        className="text-black dark:text-white bg-white dark:bg-[#242424]"
         sx={{
           width: "750px",
+          backgroundColor: "#F8F8F8",
           borderRadius: "500px",
         }}
         InputProps={{
@@ -38,8 +38,8 @@ export default function Header() {
         <HeadsetMicIcon
           sx={{
             fontSize: 42,
-            color: "#374151",
-            border: "1px solid #e5e7eb",
+            color: "#040000",
+            border: "1px solid #8F8F8F",
             padding: "5px",
             borderRadius: "50%",
           }}
@@ -47,15 +47,15 @@ export default function Header() {
         <NotificationsIcon
           sx={{
             fontSize: 42,
-            color: "#374151",
-            border: "1px solid #e5e7eb",
+            color: "#040000",
+            border: "1px solid #8F8F8F",
             padding: "5px",
             borderRadius: "50%",
           }}
         />
-        <span className="text-xl font-bold ml-7">Vinc.ragga</span>
+        <span className="text-xl text-[#040000] font-bold ml-7">Vinc.ragga</span>
         <Avatar sx={{ bgcolor: deepPurple[500] }}>VR</Avatar>
-        <ExpandMoreIcon sx={{ fontSize: 28 }} />
+        <ExpandMoreIcon sx={{ fontSize: 28, color: "#8F8F8F",  }} />
       </div>
     </header>
   );

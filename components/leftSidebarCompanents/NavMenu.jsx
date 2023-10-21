@@ -43,10 +43,10 @@ export default function NavMenu() {
                             return(
                                 <ListItem disablePadding>
                                 <ListItemButton>
-                                    <ListItemIcon>
+                                    <ListItemIcon className="text-[#8F8F8F]">
                                         {item.icon}
                                     </ListItemIcon>
-                                    <ListItemText className="text-black dark:text-white" primary={item.title} />
+                                    <ListItemText className="text-[#8F8F8F]" primary={item.title} />
                                 </ListItemButton>
                             </ListItem>
                             )
