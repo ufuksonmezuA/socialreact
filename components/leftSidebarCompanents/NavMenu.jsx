@@ -46,7 +46,7 @@ export default function NavMenu() {
                                     <ListItemIcon>
                                         {item.icon}
                                     </ListItemIcon>
-                                    <ListItemText primary={item.title} />
+                                    <ListItemText className="text-black dark:text-white" primary={item.title} />
                                 </ListItemButton>
                             </ListItem>
                             )

@@ -11,7 +11,7 @@ export default function PublishArea() {
                     <input
                         type="text"
                         placeholder="What are you publish?"
-                        className="w-full py-3 px-2"
+                        className="w-full py-3 px-2 text-black dark:text-white bg-white dark:bg-[#242424] border-none outline-none"
                     />
                 </div>
 
@@ -44,10 +44,10 @@ export default function PublishArea() {
                     </div>
                     
                     <div>
-                        <button className="border-2 px-4 py-1 rounded-full mr-3">
+                        <button className="border-2 px-4 py-1 rounded-full mr-3 text-black dark:text-white">
                             Draft
                         </button>
-                        <button className="bg-rose-500 px-4 py-1 rounded-full text-white">
+                        <button className="bg-rose-500 px-4 py-1 rounded-full text-black dark:text-white ">
                             Post Now
                         </button>
                     </div>

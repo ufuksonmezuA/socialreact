@@ -34,7 +34,7 @@ export default function TrendingPostCard(){
                 return(
                     <div className="flex flex-col mt-2">
                         <div className="flex justify-between">
-                            <div className="text-lg font-semibold w-60">
+                            <div className="text-lg text-black dark:text-white font-semibold w-60">
                                 {post.message}
                             </div>
                             <div className="">

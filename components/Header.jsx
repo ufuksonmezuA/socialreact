@@ -17,6 +17,7 @@ export default function Header() {
       <TextField
         id="outlined-basic"
         placeholder="Search now..."
+        className="text-black dark:text-white bg-white dark:bg-[#242424]"
         sx={{
           width: "750px",
           borderRadius: "500px",
