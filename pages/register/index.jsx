@@ -2,6 +2,8 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Checkbox from '@mui/material/Checkbox';
 import { useState } from "react";
+import axios from 'axios';
+
 
 export default function RegisterPage() {
   //   const [name, setName] = useState("");
@@ -26,7 +28,18 @@ export default function RegisterPage() {
 
 
   const createAccountService = async () => {
-    // servis işlemleri
+
+
+    const requestBody =  {
+      name: form.name,
+      lastname: form.surname,
+      username: form.username,
+      email: form.email,
+      password: form.password,
+    }
+    console.log(requestBody)
+
+    axios.post("http://localhost:3000/auth/register", requestBody )
   }
 
 
@@ -34,7 +47,13 @@ export default function RegisterPage() {
     if(termsCheck === false) {
       alert("you must accept ")
       return
-    } else {
+    } 
+    
+    else if (form.password !== form.password2) {
+      alert("Your passwords dosen't match");
+    }
+    
+    else {
       await createAccountService();
       alert("İşlem Tamamlandı")
     }
