@@ -33,7 +33,7 @@ export default function ContentArea () {
     ];
 
     return(
-        <div className="py-6">
+        <div>
             <PublishArea />
             {contentData.map((content) => {
                 return(

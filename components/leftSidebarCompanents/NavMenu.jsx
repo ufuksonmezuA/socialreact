@@ -36,12 +36,11 @@ export default function NavMenu() {
     ];
 
     return (
-        <>
-            <nav aria-label="main mailbox folders">
-                <List>
-                    {menuItems.map((item) => {
-                            return(
-                                <ListItem disablePadding>
+        <nav>
+            <List>
+                {menuItems.map((item) => {
+                        return(
+                            <ListItem disablePadding>
                                 <ListItemButton>
                                     <ListItemIcon className="text-[#8F8F8F]">
                                         {item.icon}
@@ -49,10 +48,9 @@ export default function NavMenu() {
                                     <ListItemText className="text-[#8F8F8F]" primary={item.title} />
                                 </ListItemButton>
                             </ListItem>
-                            )
-                        })}
-                </List>
-            </nav>
-        </>
+                        )
+                    })}
+            </List>
+        </nav>
     )
 }

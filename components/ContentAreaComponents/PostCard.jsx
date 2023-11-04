@@ -15,8 +15,7 @@ export default function PostCard( {
     
     }) {
     return(
-        <>
-            <div className="mt-10 flex flex-col gap-5 pb-10 border-b-2 border-[#EDEDED]">
+            <div className="mt-10 flex flex-col gap-5 pb-10 border-b-2 border-[#EDEDED]  ">
                 <div className="flex justify-between">
                     <div className="flex items-center gap-3">
                         <Avatar alt={userName} src={avatar} />
@@ -56,6 +55,5 @@ export default function PostCard( {
                     </div>
                 </div>
             </div>
-        </>
     );
 }
