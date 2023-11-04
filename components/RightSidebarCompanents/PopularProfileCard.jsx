@@ -45,11 +45,11 @@ export default function PopularProfileCard (){
 
                         <div>
                             {user.ishefollow == "false" && 
-                                <button className="bg-[#EF3562] text-white font-bold rounded-full px-3 py-1 capitalize">Follow</button>
+                                <button className="h-[3rem] bg-[#EF3562] text-white rounded-full px-4 py-2 capitalize">Follow</button>
                             }
 
                             {user.ishefollow == "true" && 
-                                <button className="bg-white text-[#EF3562] border-[0.125rem] border-[#EF3562] font-bold rounded-full px-3 py-1 capitalize">Unfollow</button>
+                                <button className="h-[3rem] bg-white text-[#EF3562] border-[0.125rem] border-[#EF3562] rounded-full px-4 py-2 capitalize">Unfollow</button>
                             }
                         </div>
                     </div>

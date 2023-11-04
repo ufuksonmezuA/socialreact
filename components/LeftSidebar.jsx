@@ -1,3 +1,4 @@
+import MenuCardDesign from "./LeftSidebarCompanents/MenuCardDesign";
 import Messages from "./LeftSidebarCompanents/Messages";
 import NavMenu from "./LeftSidebarCompanents/NavMenu";
 import SettingsIcon from "@mui/icons-material/Settings";
@@ -7,7 +8,12 @@ export default function LeftSidebar () {
     return(
         <div className="flex flex-col gap-4">
             <NavMenu/>
-            <Messages/>
+
+            <MenuCardDesign
+                cardTitle={"Messages"}
+                cardComponent={ <Messages/> }
+            />
+
             <div className="flex flex-col gap-3 py-3 border-t-2 border-[#EDEDED]">
                 <div className="h-[3rem] flex items-center gap-6">
                     <SettingsIcon
@@ -27,7 +33,7 @@ export default function LeftSidebar () {
                     />
                     <span className="text-[#EF3562]">Logout</span>
                 </div>
-            </div>
-        </div>    
+            </div>   
+        </div>
     );
 }

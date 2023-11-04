@@ -14,7 +14,7 @@ export default function Messages() {
             senderFullName: "Alexandra A",
             avatar: "https://mui.com/static/images/avatar/2.jpg",
             messages: "How are you...",
-            count: 1
+            count: 3
         },
         {
             senderFullName: "King_steve",
@@ -39,26 +39,22 @@ export default function Messages() {
     ]
 
     return (
-    <div>
-        <div className="flex items-center justify-between border-t-2 border-[#EDEDED]">
-            <span className="font-bold text-[#040000] text-xl pt-5">Messages</span>
-            <span className="text-[#EF3562] font-bold pt-5">See All</span>
-        </div>
+    <div className="flex flex-col justify-center gap-2">
         {messages.map((messages) => {
             return(
-                <div className="flex justify-between mt-3">
-                    <div className="flex items-cnter gap-3">
+                <div className="h-[3rem] flex items-center justify-between  ">
+                    <div className="flex items-center gap-4">
                         <div>
                             <Avatar alt={messages.senderFullName} src={messages.avatar} />
                         </div>
                         <div>
-                            <span className="font-bold text-[#040000]">{messages.senderFullName}</span>
-                            <p className="text-[#8f8f8f]">{messages.messages}</p>
+                            <span className="font-bold text-sm text-[#040000]">{messages.senderFullName}</span>
+                            <p className="text-sm text-[#8f8f8f]">{messages.messages}</p>
                         </div>
                     </div>
 
-                    <div className="">
-                        {messages.count && <Chip label={messages.count} className="bg-[#EF3562] text-white" />}
+                    <div>
+                        {messages.count && <Chip label={messages.count} className="w-[2rem] h-[2rem] bg-[#EF3562] rounded-full text-white text-sm" />}
                     </div>
                 </div>
             );
