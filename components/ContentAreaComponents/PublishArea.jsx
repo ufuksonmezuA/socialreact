@@ -14,7 +14,7 @@ export default function PublishArea() {
                 />
             </div>
 
-            <div className="flex justify-between p-4 items-center border-t-2 border-[#EDEDED]">
+            <div className="flex md:flex-row flex-col md:gap-4 gap-2 justify-between p-4 items-center border-t-2 border-[#EDEDED]">
                 <div className="flex items-center gap-2">
                     <button href="#" className="w-[3rem] h-[3rem] flex items-center justify-center">                    
                         <ControlPointOutlinedIcon

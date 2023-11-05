@@ -1,7 +1,11 @@
-export default function context(){
+import { createContext, useState } from "react";
+export const Message_data = createContext();
+function Context({children}){
+    const [message, setMessage] = useState('');
     return(
-        <>
-            <h2>Context</h2>
-        </>
+        <Message_data.Provider value={{ message, setMessage }}>
+            {children}
+        </Message_data.Provider>
     )
 }
+export default Context;
