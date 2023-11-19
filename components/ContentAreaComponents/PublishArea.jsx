@@ -2,66 +2,87 @@ import ControlPointOutlinedIcon from "@mui/icons-material/ControlPointOutlined";
 import PhotoOutlinedIcon from "@mui/icons-material/PhotoOutlined";
 import VideocamOutlinedIcon from "@mui/icons-material/VideocamOutlined";
 import InsertLinkOutlinedIcon from "@mui/icons-material/InsertLinkOutlined";
+import { useState } from "react";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+
 
 export default function PublishArea() {
-    return(
-        <div className="border-2 border-[#EDEDED] rounded-[.75rem]">
-            <div className="p-2">
-                <input
-                    type="text"
-                    placeholder="What are you publish?"
-                    className="w-full p-4 border-none outline-none"
-                />
-            </div>
 
-            <div className="flex justify-between p-4 items-center border-t-2 border-[#EDEDED]">
-                <div className="flex items-center gap-2">
-                    <button href="#" className="w-[3rem] h-[3rem] flex items-center justify-center">                    
-                        <ControlPointOutlinedIcon
-                            style={{
-                                color: "#8F8F8F",
-                                fontSize: "1.5rem"
-                            }}
-                        />
-                    </button>
+  const [inputValue, setInputValue] = useState("");
+  const dispatch = useDispatch();
 
-                    <button href="#" className="w-[3rem] h-[3rem] flex items-center justify-center">                    
-                        <PhotoOutlinedIcon
-                            style={{
-                                color: "#8F8F8F",
-                                fontSize: "1.5rem"
-                            }}
-                        />
-                    </button>
+  const publishPost = () => {
+    const requestBody = {
+      content: inputValue
+    }
 
-                    <button href="#" className="w-[3rem] h-[3rem] flex items-center justify-center">                    
-                        <VideocamOutlinedIcon
-                            style={{
-                                color: "#8F8F8F",
-                                fontSize: "1.5rem"
-                            }}
-                        />
-                    </button>
+    axios.post('http://localhost:3000/publications/publish', requestBody, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('user_token')}`
+      }
+    }).then((response) => {
+        if(response.status === 200){
+          setInputValue("");
+          dispatch({
+            type: 'REFETCH_CONTENT',
+            payload: true
+          })
+        }
+    })
+  }
 
-                    <button href="#" className="w-[3rem] h-[3rem] flex items-center justify-center">                    
-                        <InsertLinkOutlinedIcon
-                            style={{
-                                color: "#8F8F8F",
-                                fontSize: "1.5rem"
-                            }}
-                        />
-                    </button>
-                </div>
-                
-                <div className="flex items-center gap-4">
-                    <button className="h-[3rem] border-2 border-[#8F8F8F] text-[#8F8F8F] px-4 py-2 rounded-full">
-                        Draft
-                    </button>
-                    <button className="h-[3rem] bg-[#EF3562] text-white px-4 py-2 rounded-full">
-                        Post Now
-                    </button>
-                </div>
-            </div>
+  return (
+    <>
+      <div className="border-2 rounded-lg">
+        <div className="p-3">
+          <input
+            type="text"
+            value={inputValue}
+            onChange={(event) => setInputValue(event.target.value)}
+            placeholder="What are you publish?"
+            className="w-full py-3 px-2"
+          />
         </div>
-    );
+
+        <div className="flex md:flex-row flex-col md:gap-0 gap-5 justify-between p-3 items-center border-t-2">
+          <div className="flex gap-5">
+            <ControlPointOutlinedIcon
+              style={{
+                color: "#B0B0B0",
+                fontSize: "1.7rem",
+              }}
+            />
+            <PhotoOutlinedIcon
+              style={{
+                color: "#B0B0B0",
+                fontSize: "1.7rem",
+              }}
+            />
+            <VideocamOutlinedIcon
+              style={{
+                color: "#B0B0B0",
+                fontSize: "1.7rem",
+              }}
+            />
+            <InsertLinkOutlinedIcon
+              style={{
+                color: "#B0B0B0",
+                fontSize: "1.7rem",
+              }}
+            />
+          </div>
+
+          <div>
+            <button className="border-2 px-4 py-1 rounded-full mr-3">
+              Draft
+            </button>
+            <button className="bg-rose-500 px-4 py-1 rounded-full text-white" onClick={() => publishPost()}>
+              Post Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 }

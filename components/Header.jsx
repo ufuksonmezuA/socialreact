@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Logo from "@/public/logo.png";
+import Image from "next/image";
 import TextField from "@mui/material/TextField";
 import HeadsetMicIcon from "@mui/icons-material/HeadsetMic";
 import NotificationsIcon from "@mui/icons-material/Notifications";
@@ -9,50 +9,53 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import SearchIcon from "@mui/icons-material/Search";
 import InputAdornment from "@mui/material/InputAdornment";
 
-export default function Header() {
+export default function Header({user}) {
   return (
-    <header className="h-[6rem] flex items-center justify-center px-8 border-b-2 border-[#EDEDED]">
-      <nav className="w-[96rem] flex items-center justify-between">
-        <div className="w-[16rem]">
-          <Image src={Logo} height={56} />
-        </div>
- 
-        <div className="w-[48rem] bg-[#EDEDED] rounded-full">
-          <TextField
-            id="outlined-basic"
-            placeholder="Search now..."
-            InputProps={{
-              style: {
-                width: "768px",
-                backgroundColor: "#F8F8F8",
-                borderRadius: "9999px",
-                outline: "none",
-              },
-              startAdornment: (
-                <InputAdornment position="start">
-                  <SearchIcon />
-                </InputAdornment>
-              ),
-            }}
-          />
-        </div>
+    <header className="flex justify-between px-7 py-6 border-b-2 border-gray-200">
+      <Image src={Logo} height={55} />
 
-        <div className="w-[24rem] h-[3.5rem] flex items-center justify-end gap-4">
-          <button className="w-[3rem] h-[3rem] flex items-center justify-center rounded-full border-[.125rem] border-[#EDEDED] color-[#040000]">
-            <HeadsetMicIcon />
-          </button>
+      <TextField
+        id="outlined-basic"
+        placeholder="Search now..."
+        sx={{
+          width: "750px",
+          borderRadius: "500px",
+        }}
+        InputProps={{
+          style: {
+            borderRadius: "1000px",
+          },
+          startAdornment: (
+            <InputAdornment position="start">
+              <SearchIcon />
+            </InputAdornment>
+          ),
+        }}
+      />
 
-          <button className="w-[3rem] h-[3rem] flex items-center justify-center rounded-full border-[.125rem] border-[#EDEDED] color-[#040000]">
-            <NotificationsIcon />
-          </button>
-
-          <div className=" flex items-center jusitify-center gap-4">
-            <span className="text-xl text-[#040000] font-bold">Vinc.rangga</span>
-            <Avatar sx={{ bgcolor: deepPurple[500] }}>VR</Avatar>
-            <ExpandMoreIcon sx={{ fontSize: 28, color: "#8F8F8F",  }} />
-          </div>
-        </div>
-      </nav>
+      <div className="flex items-center gap-3">
+        <HeadsetMicIcon
+          sx={{
+            fontSize: 42,
+            color: "#374151",
+            border: "1px solid #e5e7eb",
+            padding: "5px",
+            borderRadius: "50%",
+          }}
+        />
+        <NotificationsIcon
+          sx={{
+            fontSize: 42,
+            color: "#374151",
+            border: "1px solid #e5e7eb",
+            padding: "5px",
+            borderRadius: "50%",
+          }}
+        />
+        <span className="text-xl font-bold ml-7">{user?.user?.name + ' ' + user?.user?.lastname}</span>
+        <Avatar sx={{ bgcolor: deepPurple[500] }}>{user?.user?.name[0]}{user?.user?.lastname[0]}</Avatar>
+        <ExpandMoreIcon sx={{ fontSize: 28 }} />
+      </div>
     </header>
   );
 }
