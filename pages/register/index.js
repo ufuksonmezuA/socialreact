@@ -147,6 +147,7 @@ export default function RegisterPage() {
               }}
             />
           </div>
+          
           <div className="flex gap-5">
             <TextField
               id="outlined-basic"
